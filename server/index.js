@@ -3,13 +3,14 @@ var express = require("express");
 var Keygrip = require("keygrip");
 var bodyParser = require("body-parser");
 var cors = require("cors");
+var config = require("../config.json");
 var payeerControler = require("./payeerControler");
 var api = require("./api");
 var { auth } = require("./middlewares");
 var mongoose = require("mongoose");
 
 mongoose
-  .connect("mongodb://localhost:27017/moneyy", {
+  .connect(config.db, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useFindAndModify: false,
@@ -40,10 +41,7 @@ app.prepare().then(() => {
     cookieSession({
       name: "session",
       keys: new Keygrip(
-        [
-          ".lKhQ.[+Xduwp1rt|>>'*(!kutLAAXXGunO^Cx!1<P`y^ST0)%f}lb50/@F$h)N",
-          "Pu{/>dYOoxJa/HN;7$(OaDK{}qjmjXnd4>0xt&#;bYMY1:5U,HC/S|w0Yb^ol#X",
-        ],
+        config.keys ,
         "SHA384",
         "base64"
       ),

@@ -1,6 +1,5 @@
 const { Router } = require("express");
 const User = require("../models/User");
-const Commition = require("../models/Commition");
 const Deposit = require("../models/Deposit");
 const Transaction = require("../models/Transaction");
 const cashStore = require("../cashStore");
@@ -66,6 +65,7 @@ router.post("/deposit", async (req, res) => {
     status: "pending",
   });
   tr = await tr.save();
+
 
   var result = await papi.makeInvoice(amount, tr.id);
   var { url } = result;

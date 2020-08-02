@@ -1,5 +1,10 @@
-import moment from "moment";
+import moment, { duration } from "moment";
+
+import setup from "moment-duration-format";
+
 import { useEffect, useRef, useState } from "react";
+
+setup(moment);
 
 function useInterval(callback, delay) {
   const savedCallback = useRef();
@@ -22,13 +27,13 @@ function useInterval(callback, delay) {
 }
 
 const Widget = ({ start }) => {
-  var { now, setNow } = useState(moment());
+  var [now, setNow] = useState(moment());
+  var end = moment(start).add(24, "hours");
+  useInterval(() => {
+    setNow(moment());
+  }, 1000);
 
-  useInterval(()=> {
-      setNow(moment())
-  },1000)
-
-  return <>{moment(start).add(1, "day").subtract(now).format("hh:mm")}</>;
+  return <>{moment.duration(end.diff(now)).format("hh:mm:ss")}</>;
 };
 
 export default Widget;

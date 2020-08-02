@@ -14,6 +14,7 @@
     "fs-extra": "^9.0.1",
     "keygrip": "^1.1.0",
     "moment": "^2.27.0",
+    "moment-duration-format": "^2.3.2",
     "mongoose": "^5.9.26",
     "next": "^9.5.1",
     "qs": "^6.9.4",
@@ -21,7 +22,6 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-faq-component": "^1.0.8",
-    "react-loading-screen": "^0.0.17",
     "shortid": "^2.2.15",
     "swr": "^0.3.0",
     "tabler-react": "^1.30.1"

@@ -5,7 +5,6 @@ import { Form, Card, Grid, Button } from "tabler-react";
 import moment from "moment";
 
 function Widget({ user }) {
-  console.log(user);
   return (
     <Grid.Col>
       <Card title="Account Details">

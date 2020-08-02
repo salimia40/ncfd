@@ -78,10 +78,10 @@ function Widget() {
   if (error) return <div>failed to load</div>
   if (!data) return <div>loading...</div>
 
-  const { loggedin = false, user = undefined } = data
+  const { loggedin = false, user = undefined , message} = data
 
   return (
-    <Site user={user} loggedin={loggedin}>
+    <Site user={user} loggedin={loggedin} title="Rules" message={message}>
       <Page.Content title="Rules">
         <Header.H4>
           Please read the following rules carefully before registration:

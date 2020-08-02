@@ -1,18 +1,17 @@
-import React, { useState, useEffect } from "react";
+import { useState } from "react";
 import { Site, Alert } from "tabler-react";
+import Head from 'next/head'
 
-function App({ children, loggedin = true, user = undefined, message = undefined }) {
+function App({ children, loggedin = true, user = undefined, message = undefined , title = ""}) {
   var [collapsed, setCollapsed] = useState(true);
-
-  // useEffect(() => {
-  //   if(message)
-  //     setTimeout(()=>{
-  //       dispatch(setMessage(undefined))
-  //     }, 5000)
-  // }, [message, dispatch])
 
   return (
     <Site>
+
+      <Head>
+        <title>{title}</title>
+      </Head>
+
       <Site.Header
         alt="Puya Crypto"
         imageURL="./logo.svg"

@@ -27,10 +27,11 @@ function Widget() {
     transactions = [],
     loggedin = false,
     user = undefined,
+    message
   } = data
 
   return (
-    <Site user={user} loggedin={loggedin}>
+    <Site user={user} loggedin={loggedin} title="Transaction history" message={message}>
       <Page.Content title="Transaction history">
         <Grid.Row cards deck>
           <Grid.Col>

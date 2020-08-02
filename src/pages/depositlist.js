@@ -3,7 +3,8 @@ import useSWR from "swr";
 
 import { Page, Card, Table, Grid, StampCard, Button, Form } from "tabler-react";
 
-import axios from "axios";
+
+import TimeoutString from "../components/timeout";
 
 import moment from "moment";
 const fetcher = (...args) =>
@@ -24,9 +25,7 @@ function Item({ deposit }) {
       <Table.Col>{deposit.profit} RUB</Table.Col>
       <Table.Col>
         {moment(deposit.created).add(1, "day").isAfter(moment())
-          ? moment(Date.now())
-              .subtract(moment(deposit.created).add(1, "day"))
-              .format("hh:mm")
+          ? <TimeoutString start={deposit.created}/>
           : "00:00:00"}
       </Table.Col>
       <Table.Col>
@@ -62,10 +61,11 @@ function MyDeposits() {
     deposit_sum = 0,
     loggedin = false,
     user = undefined,
+    message
   } = data;
 
   return (
-    <Site user={user} loggedin={loggedin}>
+    <Site user={user} loggedin={loggedin} title="My Deposits" message={message}>
       <Page.Content title="My Deposits">
         <Grid.Row>
           <Grid.Col>

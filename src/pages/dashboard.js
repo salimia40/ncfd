@@ -29,10 +29,11 @@ function Dashboard() {
     deposit_sum = 0,
     loggedin = false,
     user,
+    message
   } = data
 
   return (
-    <Site user={user} loggedin={loggedin}>
+    <Site user={user} loggedin={loggedin} title="Dashboard" message={message}>
       <Page.Content title="Dashboard">
         <Grid.Row cards deck>
           <Grid.Col>

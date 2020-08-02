@@ -26,11 +26,12 @@ const Widget = () => {
     total_deposit = 0,
     total_user = 0,
     total_paid = 0,
+    message
   } = data;
 
   return (
-    <Site user={user} loggedin={loggedin}>
-      <Page.Content title="welcome">
+    <Site user={user} loggedin={loggedin} title="Welcome" message={message}>
+      <Page.Content title="Welcome">
         <Grid.Row>
           <Grid.Col>{loggedin ? <AccountDetails user={user} /> : <Auth />}</Grid.Col>
           <Grid.Col>

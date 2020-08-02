@@ -26,13 +26,14 @@ function Widget() {
     host,
     total_commition = 0,
     total_referal = 0,
+    message
   } = data
 
   
   var link = host + "/" + user.referid;
 
   return (
-    <Site user={user} loggedin={loggedin}>
+    <Site user={user} loggedin={loggedin} title="Referral System" message={message}>
       <Page.Content title="Referral System">
         <Grid.Row cards deck>
           <Grid.Col>
