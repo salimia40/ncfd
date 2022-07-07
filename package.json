@@ -13,7 +13,7 @@
     "formik": "^2.1.5",
     "fs-extra": "^9.0.1",
     "keygrip": "^1.1.0",
-    "moment": "^2.27.0",
+    "moment": "^2.29.4",
     "moment-duration-format": "^2.3.2",
     "mongoose": "^5.9.26",
     "next": "^9.5.1",
